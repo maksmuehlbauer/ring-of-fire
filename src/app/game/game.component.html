@@ -1,0 +1,36 @@
+
+
+<div class="player-container">
+    <app-player *ngFor="let player of game.players; let i = index;" 
+    [playerActive]="i === game.currentPlayer"
+    [name]="player"></app-player>
+</div>
+
+
+<section>
+    <div class="card-stack">
+        <!-- shows the face-down stack of cards offset  -->
+        <img *ngFor="let card of [1,2,3,4,]; let i = index;" [ngStyle]="{'right.px': i * 5}"
+            src="/assets/img/cards/card_cover.png" alt="">
+
+        <!-- shows the top card from the stack for animation wise -->
+        <img (click)="takeCard()" class="top-card" style="right: 25px;" 
+            src="/assets/img/cards/card_cover.png" alt="">
+
+        <!-- shows the played card stack -->
+        <img *ngFor="let cards of game.playedCards; let i = index" class="played-card-stack"
+            src="/assets/img/cards/{{ cards }}.png" alt="">
+
+        <!-- shows the currently played card always at the top  -->
+        <img (click)="takeCard()" *ngIf="pickCardAnimation" class="pick-card" style="right: 25px;" 
+            src="/assets/img/cards/{{ currentCard }}.png" alt="">
+    </div>
+</section>
+
+
+<app-game-info [card]="currentCard"></app-game-info>
+
+<button mat-fab color="primary" (click)="openDialog()" class="btn-add">
+    <mat-icon>add</mat-icon>
+    <!-- <span class="material-icons">face</span> -->
+</button>

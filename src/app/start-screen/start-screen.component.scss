@@ -1,0 +1,46 @@
+@import './../../styles.scss';
+
+section {
+    background-color: #404040;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    @include displayDefault()
+}
+
+.start-screen {
+    width: 700px;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(200,0,0,1) 0%, rgba(255,0,0,1) 25%, rgba(255,0,0,1) 75%, rgba(200,0,0,1) 100%);
+    border: 20px solid #ffe37a;
+    @include displayDefault();
+    flex-direction: column;
+    >h1, h2 {
+        text-transform: uppercase;
+        color: $color_white;
+        font-size: 80px;
+    }
+    >h2 {
+        font-size: 32px;
+    }
+    >button {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 48px;
+        cursor: pointer;
+        padding: 16px 32px;
+        margin-top: 48px;
+        border-radius: 12px;
+        border: none;
+        // background-color: $color_yellow;
+        background: linear-gradient(335deg, #d4af37, #ffd700, #e6dfc5, #ffd700, #d4af37);
+        background-size: 200% 200%;
+        transition: background-position 0.5s;
+        &:hover {
+            background-position: 100% 0;
+        }
+
+    }
+
+}
+

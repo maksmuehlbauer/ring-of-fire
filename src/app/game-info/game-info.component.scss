@@ -1,0 +1,11 @@
+.game-info-container{
+    position: absolute;
+    bottom: 32px;
+    left: 64px;
+    right: 120px;
+    >.mat-mdc-card-title, .mat-mdc-card-subtitle {
+        display: block;
+        padding: 8px 16px;
+    }
+}
+

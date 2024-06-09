@@ -1,0 +1,26 @@
+@import './../../styles.scss';
+
+div {
+    @include displayDefault($jc: start);
+    height: 50px;
+    width: 200px;
+    background-color: $color_profile_background;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    img {
+        height: 100%;
+        object-fit: cover;
+        border-radius: 100%;
+        padding: 8px;
+        }
+        span {
+        padding-left: 8px;
+        color: $color_white;
+        font-size: 20px;
+    }
+}
+
+.player-active {
+    background-color: $color_player_active;
+}
+
